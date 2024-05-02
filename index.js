@@ -32,7 +32,7 @@ const rainCheck = weeklyRecords.filter((element) => {
 console.log(rainCheck);
 
 const badbadday = [];
-weeklyRecords.filter((element) => {
+weeklyRecords.forEach((element) => {
   if (element[2] >= 200) {
     badbadday.push(element[2]);
   }
@@ -51,7 +51,7 @@ Task 4) Calculate the total expenses for the week.
 
 ******************************************************************/
 
-const totSales = 0;
+let totSales = 0;
 
 weeklyRecords.forEach((x) => {
   totSales = totSales + x[1];
@@ -59,7 +59,7 @@ weeklyRecords.forEach((x) => {
 
 console.log(totSales);
 
-const totalExpenses = 0;
+let totalExpenses = 0;
 
 weeklyRecords.forEach((x) => {
   totalExpenses = totalExpenses + x[2];
@@ -82,13 +82,12 @@ Task 6) Identify days with net earnings (sales minus expenses) that were above t
 
 console.log(totSales / weeklyRecords.length);
 
-
-const avgExpenses = totalExpenses/weeklyRecords.length
-const aboveAvg = []
-weeklyRecords.forEach((element)=>{
-  if ((element[1]-element[2])>avgExpenses){
-    const aboveAvg.push(element[0])
+let avgExpenses = totalExpenses / weeklyRecords.length;
+let aboveAvg = [];
+weeklyRecords.forEach((element) => {
+  if (element[1] - element[2] > avgExpenses) {
+    aboveAvg.push(element[0]);
   }
-})
+});
 
-console.log(aboveAvg)
+console.log(aboveAvg);
